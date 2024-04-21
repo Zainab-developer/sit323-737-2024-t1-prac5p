@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  web:
+    image: zainab/node-web-app:debug
+    build:
+      context: .
+      dockerfile: Dockerfile.debug
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+    command: ["npm", "run", "debug"]
